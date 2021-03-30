@@ -12,3 +12,16 @@ Once the project is finished, the user should be able to interact with the appli
 - Get the tasks inside a list
 
 ## Usage
+
+Run Ganache to create local network on port `:7545`
+
+Run truffle migrations `truffle migrate`
+
+Interact with smart contracts through the `truffle console`:
+
+- Create app instance `app = await ToDoApp.deployed()`
+- Create List: `app.createList(<listName>)` => `app.createList("Groceries")`
+- Get Lists: `app.getLists()`
+- Create Task: `app.createTask(<taskName>, <listID>)` => `app.createTask("Milk", 0)`
+- Get Tasks: `app.getTasks(<listID>)` => `app.getTasks(0)`
+- Complete Task: `app.completeTask(<taskID>, <listID>)` => `app.completeTask(0, 0)`
